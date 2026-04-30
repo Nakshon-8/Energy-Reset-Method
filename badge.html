@@ -1,311 +1,108 @@
 <!DOCTYPE html>
 <html lang="sr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Energy Reset Method – Badge</title>
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            background-color: #000;
-            color: #d4a843;
-            font-family: Georgia, serif;
-            min-height: 100vh;
-            padding: 40px 20px 60px;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        .wrap {
-            max-width: 900px;
-            margin: 0 auto;
-        }
+<title>Energy Reset Method</title>
 
-        /* NASLOV */
-        .naslov {
-            text-align: center;
-            margin-bottom: 10px;
-        }
-        .naslov .tag {
-            font-size: 0.7em;
-            letter-spacing: 4px;
-            color: #d4a84370;
-            text-transform: uppercase;
-        }
-        .naslov h1 {
-            font-size: 1.6em;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            color: #d4a843;
-            margin: 8px 0 4px;
-        }
-        .naslov .divider {
-            color: #d4a84340;
-            font-size: 1.2em;
-            margin: 10px 0 20px;
-        }
-        .naslov p {
-            color: #999;
-            font-size: 0.9em;
-            line-height: 1.8;
-            font-style: italic;
-            max-width: 500px;
-            margin: 0 auto 30px;
-        }
+<!-- PREVIEW (da izgleda kao slika kad se deli) -->
+<meta property="og:title" content="Energy Reset Method">
+<meta property="og:description" content="Preuzmi i podeli svoj badge">
+<meta property="og:image" content="https://nakshon-8.github.io/Energy-Reset-Method/badge-final.png">
+<meta property="og:url" content="https://nakshon-8.github.io/Energy-Reset-Method/badge.html">
+<meta name="twitter:card" content="summary_large_image">
 
-        /* BADGE PREVIEW + DUGMAD */
-        .badge-section {
-            border: 1px solid #d4a84330;
-            padding: 30px 20px;
-            margin-bottom: 30px;
-            background: #050505;
-        }
+<style>
+body {
+  margin: 0;
+  background: #000;
+  font-family: Arial;
+  color: white;
+  text-align: center;
+}
 
-        .badge-section h2 {
-            text-align: center;
-            font-size: 0.75em;
-            letter-spacing: 4px;
-            color: #d4a84370;
-            text-transform: uppercase;
-            margin-bottom: 25px;
-        }
+.container {
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+}
 
-        .badge-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            justify-content: center;
-            margin-bottom: 25px;
-        }
+img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
 
-        .badge-item {
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-        }
+.btn {
+  display: block;
+  padding: 15px;
+  margin-top: 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+}
 
-        .badge-item .label {
-            font-size: 0.68em;
-            letter-spacing: 2px;
-            color: #d4a84360;
-            text-transform: uppercase;
-        }
+.download {
+  background: #00c853;
+  color: white;
+}
 
-        .badge-item img {
-            display: block;
-            border: 1px solid #d4a84330;
-        }
+.share {
+  background: #2962ff;
+  color: white;
+  border: none;
+}
 
-        .badge-item .dl-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            border: 1px solid #d4a843;
-            padding: 9px 16px;
-            color: #d4a843;
-            text-decoration: none;
-            font-size: 0.68em;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            cursor: pointer;
-            background: transparent;
-            font-family: Georgia, serif;
-            transition: all 0.2s;
-            width: 100%;
-            justify-content: center;
-        }
-        .badge-item .dl-btn:hover { background: #d4a843; color: #000; }
-
-        /* KOD SEKCIJA */
-        .kod-section {
-            border: 1px solid #d4a84330;
-            padding: 25px;
-            background: #050505;
-            margin-bottom: 30px;
-        }
-        .kod-section h2 {
-            font-size: 0.75em;
-            letter-spacing: 4px;
-            color: #d4a843;
-            text-transform: uppercase;
-            margin-bottom: 6px;
-        }
-        .kod-section > p {
-            color: #888;
-            font-size: 0.8em;
-            margin-bottom: 15px;
-        }
-        .kod-wrapper {
-            display: flex;
-            gap: 10px;
-            align-items: stretch;
-        }
-        .kod-wrapper pre {
-            flex: 1;
-            background: #0a0a0a;
-            border: 1px solid #d4a84330;
-            padding: 14px;
-            font-size: 0.72em;
-            color: #d4a843;
-            white-space: pre-wrap;
-            word-break: break-all;
-            line-height: 1.8;
-            font-family: monospace;
-        }
-        .copy-btn {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-            border: 1px solid #d4a843;
-            padding: 14px 16px;
-            color: #d4a843;
-            font-size: 0.68em;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            cursor: pointer;
-            background: transparent;
-            font-family: Georgia, serif;
-            min-width: 70px;
-            transition: all 0.2s;
-        }
-        .copy-btn:hover, .copy-btn.copied { background: #d4a843; color: #000; }
-        .copy-btn .icon { font-size: 1.5em; }
-        .kod-note {
-            color: #d4a84340;
-            font-size: 0.7em;
-            margin-top: 10px;
-            font-style: italic;
-        }
-
-        /* FOOTER */
-        .footer {
-            text-align: center;
-            border-top: 1px solid #d4a84320;
-            padding-top: 25px;
-        }
-        .footer a {
-            display: inline-block;
-            margin-bottom: 15px;
-            border: 1px solid #d4a843;
-            padding: 12px 30px;
-            color: #d4a843;
-            text-decoration: none;
-            font-size: 0.8em;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            transition: all 0.2s;
-        }
-        .footer a:hover { background: #d4a843; color: #000; }
-        .footer p {
-            color: #333;
-            font-size: 0.72em;
-            letter-spacing: 2px;
-            margin-top: 15px;
-        }
-
-        @media (max-width: 600px) {
-            .badge-row { gap: 20px; }
-            .kod-wrapper { flex-direction: column; }
-            .copy-btn { width: 100%; flex-direction: row; padding: 10px; }
-        }
-    </style>
+.site {
+  background: gold;
+  color: black;
+}
+</style>
 </head>
+
 <body>
-<div class="wrap">
 
-    <!-- NASLOV -->
-    <div class="naslov">
-        <div class="tag">Stabilnost. Harmonija. Zaštita.</div>
-        <h1>Energy Reset Method</h1>
-        <div class="divider">◆</div>
-        <p>Delimo svetlost. Stvaramo promenu.<br>
-        Stavi ovaj badge na svoj sajt i poveži se sa zajednicom koja raste.</p>
-    </div>
+<div class="container">
 
-    <!-- BADGE VELIČINE -->
-    <div class="badge-section">
-        <h2>◆ &nbsp; Izaberi svoj badge &nbsp; ◆</h2>
-        <div class="badge-row">
+  <!-- BADGE SLIKA -->
+  <img src="badge-final.png" alt="Energy Reset Badge">
 
-            <div class="badge-item">
-                <div class="label">Veliki · 320px</div>
-                <img src="badge.png" width="320" alt="Energy Reset Method Badge">
-                <button class="dl-btn" onclick="preuzmi(320)">⬇ Preuzmi badge (PNG)</button>
-            </div>
+  <!-- DOWNLOAD -->
+  <a href="badge-final.png" download class="btn download">
+    📥 Preuzmi badge
+  </a>
 
-            <div class="badge-item">
-                <div class="label">Srednji · 240px</div>
-                <img src="badge.png" width="240" alt="Energy Reset Method Badge">
-                <button class="dl-btn" onclick="preuzmi(240)">⬇ Preuzmi badge (PNG)</button>
-            </div>
+  <!-- SHARE -->
+  <button class="btn share" onclick="shareBadge()">
+    📤 Podeli link
+  </button>
 
-            <div class="badge-item">
-                <div class="label">Mali · 160px</div>
-                <img src="badge.png" width="160" alt="Energy Reset Method Badge">
-                <button class="dl-btn" onclick="preuzmi(160)">⬇ Preuzmi badge (PNG)</button>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- KOD -->
-    <div class="kod-section">
-        <h2>Ugradi na svoj sajt · Copy / Paste</h2>
-        <p>Kopiraj ovaj kod i nalepi na svoje stranice (HTML režim):</p>
-        <div class="kod-wrapper">
-            <pre id="glavni-kod">&lt;a href="https://nakshon-8.github.io/Energy-Reset-Method/" target="_blank"&gt;
-  &lt;img src="https://nakshon-8.github.io/Energy-Reset-Method/badge.png"
-       alt="Energy Reset Method" width="320" style="border:0;" /&gt;
-&lt;/a&gt;</pre>
-            <button class="copy-btn" onclick="kopiraj(this)">
-                <span class="icon">📋</span>
-                <span>Kopiraj<br>kod</span>
-            </button>
-        </div>
-        <div class="kod-note">* Za srednji koristi width="240", za mali width="160".</div>
-    </div>
-
-    <!-- FOOTER -->
-    <div class="footer">
-        <a href="index.html">← Nazad na sajt</a>
-        <p>♥ Hvala što širiš svetlost &nbsp;◆&nbsp; Zajedno stvaramo novu energetsku realnost</p>
-    </div>
+  <!-- SAJT -->
+  <a href="https://nakshon-8.github.io/Energy-Reset-Method/" class="btn site">
+    🌐 Idi na sajt
+  </a>
 
 </div>
 
 <script>
-    function preuzmi(sirina) {
-        var canvas = document.createElement('canvas');
-        var img = new Image();
-        img.crossOrigin = 'anonymous';
-        img.onload = function() {
-            var ratio = img.naturalHeight / img.naturalWidth;
-            canvas.width = sirina;
-            canvas.height = Math.round(sirina * ratio);
-            var ctx = canvas.getContext('2d');
-            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-            var link = document.createElement('a');
-            link.download = 'ERM-badge-' + sirina + '.png';
-            link.href = canvas.toDataURL('image/png');
-            link.click();
-        };
-        img.src = 'badge.png';
-    }
+function shareBadge() {
+  const url = "https://nakshon-8.github.io/Energy-Reset-Method/badge.html";
 
-    function kopiraj(btn) {
-        var tekst = document.getElementById('glavni-kod').innerText;
-        navigator.clipboard.writeText(tekst).then(function() {
-            btn.innerHTML = '<span class="icon">✓</span><span>Kopirano!</span>';
-            btn.classList.add('copied');
-            setTimeout(function() {
-                btn.innerHTML = '<span class="icon">📋</span><span>Kopiraj<br>kod</span>';
-                btn.classList.remove('copied');
-            }, 2000);
-        });
-    }
+  if (navigator.share) {
+    navigator.share({
+      title: "Energy Reset Method",
+      text: "Pogledaj ovo 👇",
+      url: url
+    });
+  } else {
+    navigator.clipboard.writeText(url);
+    alert("Link kopiran – nalepi ga i podeli.");
+  }
+}
 </script>
 
 </body>
 </html>
+          
