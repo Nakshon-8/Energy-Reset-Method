@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Energy Reset Method</title>
+<meta property="og:title" content="Energy Reset Method">
+<meta property="og:description" content="Preuzmi i podeli svoj bedz">
+<meta property="og:image" content="https://nakshon-8.github.io/Energy-Reset-Method/badge-final.png">
+<meta property="og:url" content="https://nakshon-8.github.io/Energy-Reset-Method/badge.html">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 16px;
+  }
+  .wrap {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+  }
+  .wrap img {
+    width: 100%;
+    display: block;
+    border-radius: 14px;
+  }
+  .hs {
+    position: absolute;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+  .hs:hover { background: rgba(255,255,255,0.06); border-radius: 10px; }
+
+  #hs1 { left: 2%;  width: 24%; top: 57%; height: 36%; }
+  #hs2 { left: 27%; width: 27%; top: 57%; height: 36%; }
+  #hs3 { left: 55%; width: 20%; top: 57%; height: 36%; }
+  #hs4 { left: 76%; width: 23%; top: 52%; height: 44%; }
+
+  .toast {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #222;
+    color: #fff;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    display: none;
+    z-index: 999;
+    white-space: nowrap;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <img src="badge-final.png" alt="Energy Reset Bedz">
+
+  <!-- Preuzmi badge -->
+  <a class="hs" id="hs1"
+     href="badge-final.png"
+     download="energy-reset-bedz.png"
+     title="Preuzmi bedz"></a>
+
+  <!-- Poseti stranicu -->
+  <a class="hs" id="hs2"
+     href="https://nakshon-8.github.io/Energy-Reset-Method/"
+     target="_blank"
+     title="Poseti stranicu"></a>
+
+  <!-- Podeli link -->
+  <button class="hs" id="hs3" onclick="podeli()" title="Podeli link"></button>
+
+  <!-- QR -->
+  <a class="hs" id="hs4"
+     href="https://nakshon-8.github.io/Energy-Reset-Method/"
+     target="_blank"
+     title="Poseti sajt"></a>
+</div>
+
+<div class="toast" id="toast">✅ Link kopiran u klipbord!</div>
+
+<script>
+  function podeli() {
+    const url = "https://nakshon-8.github.io/Energy-Reset-Method/badge.html";
+    if (navigator.share) {
+      navigator.share({ title: "Energy Reset Method", text: "Pogledaj ovo 👇", url });
+    } else {
+      navigator.clipboard.writeText(url).then(() => {
+        const t = document.getElementById('toast');
+        t.style.display = 'block';
+        setTimeout(() => t.style.display = 'none', 2500);
+      });
+    }
+  }
+</script>
+</body>
+</html>
