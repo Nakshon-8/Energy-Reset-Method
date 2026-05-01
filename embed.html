@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uzmi Energy Reset Badge</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: #0b0f1a;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 24px 16px;
+}
+h1 { font-size: 24px; margin-bottom: 8px; color: gold; }
+.subtitle { font-size: 14px; opacity: 0.7; margin-bottom: 28px; }
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 900px;
+  margin: auto;
+}
+@media(max-width: 660px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+.card {
+  background: #111827;
+  border-radius: 14px;
+  padding: 20px;
+  text-align: left;
+}
+.card h2 {
+  font-size: 17px;
+  margin-bottom: 14px;
+  text-align: center;
+  color: gold;
+}
+.preview {
+  text-align: center;
+  margin-bottom: 18px;
+}
+.preview img {
+  width: 100%;
+  max-width: 280px;
+  border-radius: 10px;
+  border: 1px solid #333;
+}
+
+.size-group { margin-bottom: 14px; }
+.size-label {
+  font-size: 12px;
+  opacity: 0.6;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.code-box {
+  background: #0b0f1a;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-family: monospace;
+  color: #a0e0a0;
+  word-break: break-all;
+  line-height: 1.5;
+  margin-bottom: 6px;
+  white-space: pre-wrap;
+}
+.btn-copy {
+  width: 100%;
+  padding: 9px;
+  border: none;
+  border-radius: 8px;
+  background: gold;
+  color: black;
+  font-weight: bold;
+  font-size: 13px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.btn-copy:hover { opacity: 0.85; }
+.btn-copy.copied { background: #00c853; color: white; }
+
+.footer {
+  margin-top: 28px;
+  font-size: 12px;
+  opacity: 0.5;
+}
+</style>
+</head>
+<body>
+
+<h1>Uzmi Energy Reset Badge</h1>
+<p class="subtitle">Izaberi verziju i veličinu koja se uklapa u tvoj sajt</p>
+
+<div class="grid">
+
+  <!-- DARK -->
+  <div class="card">
+    <h2>🌑 Tamna verzija</h2>
+    <div class="preview">
+      <img src="https://nakshon-8.github.io/Energy-Reset-Method/badge-final.png" alt="Dark badge">
+    </div>
+
+    <div class="size-group">
+      <div class="size-label">Mali (180px)</div>
+      <div class="code-box" id="dark-small"></div>
+      <button class="btn-copy" onclick="kopiraj('dark-small', this)">Kopiraj kod</button>
+    </div>
+
+    <div class="size-group">
+      <div class="size-label">Srednji (260px)</div>
+      <div class="code-box" id="dark-medium"></div>
+      <button class="btn-copy" onclick="kopiraj('dark-medium', this)">Kopiraj kod</button>
+    </div>
+
+    <div class="size-group">
+      <div class="size-label">Veliki (400px)</div>
+      <div class="code-box" id="dark-large"></div>
+      <button class="btn-copy" onclick="kopiraj('dark-large', this)">Kopiraj kod</button>
+    </div>
+  </div>
+
+  <!-- LIGHT -->
+  <div class="card">
+    <h2>☀️ Svetla verzija</h2>
+    <div class="preview">
+      <img src="https://nakshon-8.github.io/Energy-Reset-Method/badge-light.png" alt="Light badge">
+    </div>
+
+    <div class="size-group">
+      <div class="size-label">Mali (180px)</div>
+      <div class="code-box" id="light-small"></div>
+      <button class="btn-copy" onclick="kopiraj('light-small', this)">Kopiraj kod</button>
+    </div>
+
+    <div class="size-group">
+      <div class="size-label">Srednji (260px)</div>
+      <div class="code-box" id="light-medium"></div>
+      <button class="btn-copy" onclick="kopiraj('light-medium', this)">Kopiraj kod</button>
+    </div>
+
+    <div class="size-group">
+      <div class="size-label">Veliki (400px)</div>
+      <div class="code-box" id="light-large"></div>
+      <button class="btn-copy" onclick="kopiraj('light-large', this)">Kopiraj kod</button>
+    </div>
+  </div>
+
+</div>
+
+<p class="footer">Klik na badge vodi na stranicu za preuzimanje i deljenje</p>
+
+<script>
+const BASE = "https://nakshon-8.github.io/Energy-Reset-Method";
+
+const kodovi = {
+  "dark-small":   `<a href="${BASE}/badge.html" target="_blank">\n  <img src="${BASE}/badge-final.png" width="180">\n</a>`,
+  "dark-medium":  `<a href="${BASE}/badge.html" target="_blank">\n  <img src="${BASE}/badge-final.png" width="260">\n</a>`,
+  "dark-large":   `<a href="${BASE}/badge.html" target="_blank">\n  <img src="${BASE}/badge-final.png" style="max-width:400px;width:100%;">\n</a>`,
+  "light-small":  `<a href="${BASE}/badge.html" target="_blank">\n  <img src="${BASE}/badge-light.png" width="180">\n</a>`,
+  "light-medium": `<a href="${BASE}/badge.html" target="_blank">\n  <img src="${BASE}/badge-light.png" width="260">\n</a>`,
+  "light-large":  `<a href="${BASE}/badge.html" target="_blank">\n  <img src="${BASE}/badge-light.png" style="max-width:400px;width:100%;">\n</a>`,
+};
+
+// Upiši kodove u code-box elemente
+Object.entries(kodovi).forEach(([id, kod]) => {
+  document.getElementById(id).textContent = kod;
+});
+
+function kopiraj(id, btn) {
+  const text = kodovi[id];
+  navigator.clipboard.writeText(text).then(() => {
+    const orig = btn.textContent;
+    btn.textContent = "✅ Kopirano!";
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = orig;
+      btn.classList.remove('copied');
+    }, 2000);
+  });
+}
+</script>
+</body>
+</html>
