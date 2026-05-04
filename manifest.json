@@ -2,7 +2,7 @@
   "name": "Energy Reset Method",
   "short_name": "ERM",
   "description": "Transformacija iz unutra — Stabilnost. Harmonija. Zaštita.",
-  "start_url": "app.html",
+  "start_url": "splash.html",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#D4AF37",
