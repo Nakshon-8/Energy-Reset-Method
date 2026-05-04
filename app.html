@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Energy Reset</title>
+
+<!-- PWA -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#000">
+
+<!-- iPhone -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Energy Reset">
+<link rel="apple-touch-icon" href="icon-192.png">
+
+<style>
+body {
+  margin:0;
+  background:#000;
+  font-family:Arial;
+  color:#fff;
+}
+
+.container {
+  max-width:420px;
+  margin:auto;
+  padding:20px;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+h1 {
+  text-align:center;
+  color:#D4AF37;
+  margin-bottom:20px;
+}
+
+.menu {
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.btn {
+  padding:14px;
+  border-radius:10px;
+  font-size:16px;
+  text-align:left;
+  cursor:pointer;
+}
+
+.btn-primary {
+  background:#D4AF37;
+  color:#000;
+  border:none;
+}
+
+.btn-secondary {
+  background:#111;
+  color:#fff;
+  border:1px solid #D4AF37;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<img src="icon-192.png" style="width:80px;margin:auto;display:block;">
+<h1>ENERGY RESET</h1>
+
+<div class="menu">
+
+<button onclick="location.href='app.html'" class="btn btn-primary">🏠 Home</button>
+
+<button onclick="location.href='personalni.html'" class="btn btn-secondary">👤 Personalni rad</button>
+
+<button onclick="location.href='poslovni.html'" class="btn btn-secondary">💼 Poslovni rad</button>
+
+<button onclick="location.href='edicija.html'" class="btn btn-secondary">📘 Edicija</button>
+
+<button onclick="location.href='kontakt.html'" class="btn btn-secondary">✉️ Kontakt</button>
+
+</div>
+
+</div>
+
+<!-- iPhone INSTALL BAR -->
+<div id="iphoneInstall" style="
+position:fixed;
+bottom:0;
+left:0;
+right:0;
+background:#000;
+color:#fff;
+padding:16px;
+display:none;
+z-index:9999;
+border-top:2px solid #D4AF37;
+">
+
+<b>Instaliraj aplikaciju</b><br>
+Klikni Share ⬆️ pa Add to Home Screen
+
+</div>
+
+<script>
+// REGISTER SW
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js');
+}
+
+// INSTALL DETECT
+let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+});
+
+// iPhone DETECT
+function isIOS() {
+  return /iphone|ipad|ipod/i.test(navigator.userAgent);
+}
+
+function isStandalone() {
+  return window.matchMedia('(display-mode: standalone)').matches 
+      || window.navigator.standalone === true;
+}
+
+window.addEventListener('load', () => {
+
+  // iPhone guide
+  if (isIOS() && !isStandalone()) {
+    setTimeout(() => {
+      document.getElementById('iphoneInstall').style.display = 'block';
+    }, 1500);
+  }
+
+  // sakrij install ako je već instalirano
+  if (isStandalone()) {
+    const iphone = document.getElementById('iphoneInstall');
+    if (iphone) iphone.style.display = 'none';
+  }
+
+});
+</script>
+
+</body>
+</html>
