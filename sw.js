@@ -1,4 +1,4 @@
-const CACHE = 'erm-v4';
+const CACHE_NAME = 'erm-final';
 
 const FILES = [
   'app.html',
