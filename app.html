@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>Energy Reset Method</title>
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#000">
+<link rel="apple-touch-icon" href="icon-512.png">
+
+<style>
+body {
+  margin:0;
+  background:#000;
+  color:#E8E0D0;
+  font-family: Arial, sans-serif;
+}
+
+/* SPLASH */
+#splash {
+  position:fixed;
+  inset:0;
+  background:#000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+#splash img { width:120px; animation:pulse 1.6s infinite; }
+
+@keyframes pulse {
+  0%{transform:scale(1);opacity:.7}
+  50%{transform:scale(1.1);opacity:1}
+  100%{transform:scale(1);opacity:.7}
+}
+
+/* PAGES */
+.page { display:none; padding:20px; }
+.page.active { display:block; }
+
+h1 {
+  color:#D4AF37;
+  font-weight:300;
+}
+
+/* NAV */
+.nav {
+  position:fixed;
+  bottom:0;
+  width:100%;
+  display:flex;
+  background:#111;
+}
+.nav button {
+  flex:1;
+  padding:12px;
+  background:none;
+  border:none;
+  color:#888;
+}
+.nav button.active { color:#D4AF37; }
+
+/* BUTTON */
+.btn {
+  margin-top:15px;
+  padding:14px;
+  width:100%;
+  background:#D4AF37;
+  border:none;
+  color:#000;
+  font-weight:bold;
+  border-radius:10px;
+}
+.btn2 {
+  margin-top:10px;
+  padding:12px;
+  width:100%;
+  background:#111;
+  border:1px solid #D4AF37;
+  color:#D4AF37;
+  border-radius:10px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- SPLASH -->
+<div id="splash">
+  <img src="icon-512.png">
+</div>
+
+<!-- HOME -->
+<div class="page active" id="home">
+  <h1>Energy Reset</h1>
+  <p>Transformacija iz unutra</p>
+
+  <button class="btn" onclick="installApp()">INSTALIRAJ APP</button>
+
+  <h3>Šta je metoda?</h3>
+  <p>Rad na duši, oslobađanje blokada i vraćanje unutrašnjeg poretka.</p>
+
+  <button class="btn2" onclick="go('personal', this)">PERSONALNI RAD</button>
+  <button class="btn2" onclick="go('biznis', this)">POSLOVNI RAD</button>
+</div>
+
+<!-- PERSONALNI -->
+<div class="page" id="personal">
+  <h1>Personalni rad</h1>
+  <p>Defragmentacija duše, trauma, odnosi.</p>
+
+  <button class="btn" onclick="window.open('https://wa.me/38163459383')">
+    ZAKAŽI TERMIN
+  </button>
+</div>
+
+<!-- POSLOVNI -->
+<div class="page" id="biznis">
+  <h1>Poslovni rad</h1>
+  <p>Rad sa firmama i timovima. Balans i odluke.</p>
+
+  <button class="btn2" onclick="window.open('https://wa.me/38163459383')">
+    KONTAKT
+  </button>
+</div>
+
+<!-- KNJIGE -->
+<div class="page" id="knjige">
+  <h1>Edicija</h1>
+
+  <button class="btn2" onclick="window.open('https://payhip.com/b/DYJib')">
+    Put Povratka (besplatno)
+  </button>
+
+  <button class="btn2" onclick="window.open('https://payhip.com/Serpentas')">
+    Ontologija
+  </button>
+
+  <button class="btn2" onclick="window.open('https://payhip.com/Serpentas')">
+    Patologija
+  </button>
+</div>
+
+<!-- KONTAKT -->
+<div class="page" id="kontakt">
+  <h1>Kontakt</h1>
+
+  <button class="btn" onclick="window.open('https://wa.me/38163459383')">
+    WhatsApp / Viber
+  </button>
+
+  <button class="btn2" onclick="window.open('mailto:serpentas9@gmail.com')">
+    Email
+  </button>
+
+  <button class="btn2" onclick="window.open('https://instagram.com/malicevicdragan')">
+    Instagram
+  </button>
+</div>
+
+<!-- NAV -->
+<div class="nav">
+  <button onclick="go('home', this)" class="active">Home</button>
+  <button onclick="go('personal', this)">Personalni</button>
+  <button onclick="go('biznis', this)">Biznis</button>
+  <button onclick="go('knjige', this)">Knjige</button>
+  <button onclick="go('kontakt', this)">Kontakt</button>
+</div>
+
+<script>
+let deferredPrompt;
+
+/* SPLASH */
+window.onload = () => {
+  setTimeout(()=>{
+    document.getElementById('splash').style.display='none';
+  },1000);
+};
+
+/* NAV */
+function go(id, btn){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+
+/* INSTALL */
+window.addEventListener('beforeinstallprompt', e=>{
+  e.preventDefault();
+  deferredPrompt=e;
+
+  setTimeout(()=>{
+    if(deferredPrompt) deferredPrompt.prompt();
+  },500);
+});
+
+function installApp(){
+  if(deferredPrompt){
+    deferredPrompt.prompt();
+  } else {
+    alert("Na iPhone: Share → Add to Home Screen");
+  }
+}
+
+/* SW */
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('sw.js');
+}
+</script>
+
+</body>
+</html>
