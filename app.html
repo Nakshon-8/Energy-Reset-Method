@@ -15,32 +15,39 @@ body {
   color:#fff;
 }
 
-/* SCREENS */
 .screen { display:none; padding:20px 20px 100px; }
 .active { display:block; }
 
 /* HERO */
 .hero {
   text-align:center;
-  margin-top:40px;
+  margin-top:30px;
 }
+
+/* LOGO */
+.logo {
+  width:140px;
+  display:block;
+  margin:0 auto 15px;
+  filter: drop-shadow(0 0 25px rgba(212,175,55,0.8));
+}
+
+/* TITLE */
 .hero h1 {
   font-family:'Playfair Display';
   color:#D4AF37;
   letter-spacing:2px;
-  font-size:28px;
+  font-size:26px;
 }
 .hero .sub {
-  color:#D4AF37;
   letter-spacing:4px;
-  margin-top:-5px;
+  color:#D4AF37;
 }
 .hero p {
   opacity:0.6;
-  margin-top:10px;
 }
 
-/* IMAGE (logo style) */
+/* IMAGE */
 .image {
   width:100%;
   border-radius:20px;
@@ -58,9 +65,7 @@ body {
 }
 
 /* TEXT */
-h3 {
-  color:#D4AF37;
-}
+h3 { color:#D4AF37; }
 
 /* BUTTON */
 .btn {
@@ -87,7 +92,6 @@ h3 {
 .header {
   display:flex;
   justify-content:space-between;
-  margin-bottom:10px;
 }
 .title {
   color:#D4AF37;
@@ -122,9 +126,13 @@ h3 {
 <div id="home" class="screen active">
 
 <div class="hero">
+
+<img src="logo.png" class="logo">
+
 <h1>ENERGY RESET</h1>
 <div class="sub">METHOD</div>
 <p>Reset • Realign • Reclaim</p>
+
 </div>
 
 <div class="card">
@@ -149,15 +157,7 @@ h3 {
 
 <div class="card">
 <h3>Unutrašnja stabilizacija</h3>
-
-<p>
-Rad na emocijama, odnosima i unutrašnjem balansu.  
-Vraćanje fokusa i jasnoće.
-</p>
-
-<p style="opacity:0.7;">
-Za one koji osećaju pritisak, nemir ili blokade.
-</p>
+<p>Rad na emocijama, odnosima i unutrašnjem balansu.</p>
 
 <button class="btn main" onclick="window.open('https://wa.me/38163459383')">
 Zakaži termin
@@ -175,18 +175,11 @@ Zakaži termin
 <div onclick="nav('home')">🏠</div>
 </div>
 
-<img src="logo.png" class="image" style="filter: contrast(1.2) brightness(1.1);">
+<img src="logo.png" class="image" style="filter: contrast(1.2);">
 
 <div class="card">
-<h3>Sistemi i odluke</h3>
-
-<p>
-Rad sa poslovnim okruženjem, strukturama i pravcem razvoja.
-</p>
-
-<p style="opacity:0.7;">
-Za jasnoću, stabilnost i donošenje pravih odluka.
-</p>
+<h3>Struktura i odluke</h3>
+<p>Rad sa sistemima i pravcem razvoja.</p>
 
 <button class="btn main" onclick="window.open('https://wa.me/38163459383')">
 Kontakt
@@ -208,10 +201,6 @@ Kontakt
 
 <div class="card">
 <h3>Knjige i materijali</h3>
-
-<p>
-Razumevanje sistema, procesa i unutrašnje transformacije.
-</p>
 
 <button class="btn main" onclick="window.open('https://payhip.com/b/DYJib')">
 Besplatna knjiga
@@ -237,10 +226,6 @@ Sve knjige
 
 <div class="card">
 <h3>Poveži se</h3>
-
-<p>
-Tu sam da odgovorim na vaša pitanja i pomognem.
-</p>
 
 <button class="btn main" onclick="window.open('https://wa.me/38163459383')">
 WhatsApp
