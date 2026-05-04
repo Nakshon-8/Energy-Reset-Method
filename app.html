@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Energy Reset Method</title>
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#000">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin:0;
+  background:#000;
+  font-family:-apple-system,Arial;
+  color:#fff;
+}
+
+/* SPLASH */
+#splash {
+  position:fixed;
+  width:100%;
+  height:100vh;
+  background:#000;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  z-index:999;
+}
+
+#splash img {
+  width:130px;
+  animation:pulse 1.5s infinite;
+  filter:drop-shadow(0 0 20px gold);
+}
+
+#splash h2 {
+  color:#D4AF37;
+  letter-spacing:2px;
+}
+
+@keyframes pulse {
+  0%{transform:scale(1);}
+  50%{transform:scale(1.05);}
+  100%{transform:scale(1);}
+}
+
+/* SCREEN */
+.screen { display:none; padding:20px 20px 100px; animation:fade 0.3s; }
+.active { display:block; }
+
+@keyframes fade {
+  from{opacity:0; transform:translateY(10px);}
+  to{opacity:1;}
+}
+
+/* HEADER */
+.header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.title {
+  color:#D4AF37;
+  font-family:'Playfair Display';
+}
+
+/* LOGO */
+.logo {
+  width:150px;
+  margin:20px auto;
+  display:block;
+  filter:drop-shadow(0 0 15px rgba(212,175,55,0.6));
+}
+
+/* CARD */
+.card {
+  background:#111;
+  padding:22px;
+  border-radius:22px;
+  margin-top:15px;
+  box-shadow:0 0 30px rgba(212,175,55,0.15);
+}
+
+/* BUTTON */
+.btn {
+  margin-top:12px;
+  padding:16px;
+  width:100%;
+  border-radius:16px;
+  font-size:16px;
+}
+
+.main {
+  background:linear-gradient(90deg,#D4AF37,#f6d365);
+  color:#000;
+  border:none;
+}
+
+.secondary {
+  background:#000;
+  color:#D4AF37;
+  border:1px solid #D4AF37;
+}
+
+/* MENU */
+.menu {
+  position:fixed;
+  bottom:0;
+  width:100%;
+  display:flex;
+  justify-content:space-around;
+  background:#000;
+  border-top:1px solid #222;
+  padding:10px 0;
+}
+
+.menu div {
+  font-size:12px;
+  color:#888;
+  cursor:pointer;
+}
+
+.menu .active {
+  color:#D4AF37;
+}
+
+/* INSTALL BANNER */
+.install {
+  position:fixed;
+  bottom:70px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#111;
+  padding:10px 15px;
+  border-radius:12px;
+  font-size:12px;
+  display:none;
+}
+</style>
+</head>
+
+<body>
+
+<!-- SPLASH -->
+<div id="splash">
+  <img src="icon-512.png">
+  <h2>ENERGY RESET METHOD</h2>
+</div>
+
+<!-- HOME -->
+<div id="home" class="screen active">
+<img src="icon-512.png" class="logo">
+<div class="card">
+<button class="btn main" onclick="openScreen('personalni')">Personalni</button>
+<button class="btn secondary" onclick="openScreen('poslovni')">Poslovni</button>
+<button class="btn secondary" onclick="openScreen('edicija')">Edicija</button>
+<button class="btn secondary" onclick="openScreen('kontakt')">Kontakt</button>
+</div>
+</div>
+
+<!-- PERSONALNI -->
+<div id="personalni" class="screen">
+<div class="header">
+<div onclick="openScreen('home')">←</div>
+<div class="title">Personalni</div>
+<div onclick="openScreen('home')">🏠</div>
+</div>
+<img src="icon-512.png" class="logo">
+<div class="card">
+<h3 style="color:#D4AF37;">Stabilizacija</h3>
+<p>Rad na emocijama i balansu.</p>
+<button class="btn main" onclick="window.open('https://wa.me/38163459383')">Zakaži</button>
+</div>
+</div>
+
+<!-- POSLOVNI -->
+<div id="poslovni" class="screen">
+<div class="header">
+<div onclick="openScreen('home')">←</div>
+<div class="title">Poslovni</div>
+<div onclick="openScreen('home')">🏠</div>
+</div>
+<img src="icon-512.png" class="logo">
+<div class="card">
+<h3 style="color:#D4AF37;">Struktura</h3>
+<p>Rad sa sistemima.</p>
+<button class="btn main" onclick="window.open('https://wa.me/38163459383')">Kontakt</button>
+</div>
+</div>
+
+<!-- EDICIJA -->
+<div id="edicija" class="screen">
+<div class="header">
+<div onclick="openScreen('home')">←</div>
+<div class="title">Edicija</div>
+<div onclick="openScreen('home')">🏠</div>
+</div>
+<img src="icon-512.png" class="logo">
+<div class="card">
+<button class="btn main" onclick="window.open('https://payhip.com/b/DYJib')">Besplatna knjiga</button>
+<button class="btn secondary" onclick="window.open('https://payhip.com/Serpentas')">Sve knjige</button>
+</div>
+</div>
+
+<!-- KONTAKT -->
+<div id="kontakt" class="screen">
+<div class="header">
+<div onclick="openScreen('home')">←</div>
+<div class="title">Kontakt</div>
+<div onclick="openScreen('home')">🏠</div>
+</div>
+<img src="icon-512.png" class="logo">
+<div class="card">
+<button class="btn main" onclick="window.open('https://wa.me/38163459383')">WhatsApp</button>
+<button class="btn secondary" onclick="window.open('mailto:serpentas9@gmail.com')">Email</button>
+</div>
+</div>
+
+<!-- MENU -->
+<div class="menu">
+<div onclick="nav('home')" id="m-home" class="active">Home</div>
+<div onclick="nav('personalni')" id="m-p">Personalni</div>
+<div onclick="nav('poslovni')" id="m-b">Poslovni</div>
+<div onclick="nav('edicija')" id="m-e">Edicija</div>
+<div onclick="nav('kontakt')" id="m-k">Kontakt</div>
+</div>
+
+<!-- INSTALL HINT -->
+<div class="install" id="installHint">
+Dodaj na početni ekran (Share → Add to Home Screen)
+</div>
+
+<script>
+function openScreen(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function nav(id){
+  openScreen(id);
+  document.querySelectorAll('.menu div').forEach(m=>m.classList.remove('active'));
+  document.getElementById('m-'+(id==='home'?'home':id[0])).classList.add('active');
+}
+
+/* SPLASH */
+setTimeout(()=>{
+  document.getElementById('splash').style.display='none';
+},1300);
+
+/* iPhone hint */
+if (navigator.userAgent.includes("iPhone")) {
+  setTimeout(()=>{
+    document.getElementById('installHint').style.display='block';
+  },2000);
+}
+</script>
+
+</body>
+</html>
