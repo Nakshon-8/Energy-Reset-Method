@@ -1,4 +1,4 @@
-const CACHE = 'erm-v10';
+const CACHE = 'erm-v12';
 
 self.addEventListener('install', e => {
   self.skipWaiting();
