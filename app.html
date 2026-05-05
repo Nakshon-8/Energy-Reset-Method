@@ -5,8 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Energy Reset Method</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
-
 <style>
 
 body{
@@ -16,17 +14,17 @@ body{
   font-family:-apple-system,Arial;
 }
 
-/* GLOW */
+/* BACKGROUND GLOW */
 .bg{
   position:fixed;
-  width:300px;
-  height:300px;
-  top:40%;
+  width:500px;
+  height:500px;
+  top:45%;
   left:50%;
   transform:translate(-50%,-50%);
-  background: radial-gradient(circle, rgba(212,175,55,0.25), transparent 70%);
-  filter: blur(50px);
-  animation:pulse 5s infinite;
+  background: radial-gradient(circle, rgba(212,175,55,0.35), transparent 70%);
+  filter: blur(80px);
+  animation:pulse 6s infinite ease-in-out;
   z-index:0;
 }
 
@@ -48,44 +46,63 @@ body{
 
 /* LOGO */
 .logo{
-  width:160px;
-  margin:30px auto;
-  filter: drop-shadow(0 0 30px rgba(212,175,55,0.9));
+  width:170px;
+  margin:40px auto 20px;
+  display:block;
+  filter:
+    drop-shadow(0 0 30px rgba(212,175,55,0.9))
+    drop-shadow(0 0 80px rgba(212,175,55,0.5));
 }
 
 /* TEXT */
 h2{
   color:#D4AF37;
-  font-family:'Playfair Display';
+  letter-spacing:2px;
 }
-
 p{
   opacity:.7;
   max-width:320px;
   margin:10px auto;
 }
 
-/* BUTTON */
+/* BUTTON BASE */
 .btn{
-  display:block;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
   margin:15px auto;
-  padding:15px;
+  padding:16px 18px;
   width:90%;
-  max-width:320px;
-  border-radius:20px;
+  max-width:340px;
+  border-radius:25px;
   font-size:16px;
 }
 
+/* MAIN BUTTON */
 .main{
-  background:linear-gradient(90deg,#D4AF37,#f6d365);
+  background: linear-gradient(90deg,#D4AF37,#f6d365);
   color:#000;
   border:none;
+  box-shadow:0 0 20px rgba(212,175,55,0.4);
 }
 
+/* SECONDARY */
 .secondary{
   background:#000;
   color:#D4AF37;
-  border:1px solid #D4AF37;
+  border:1px solid rgba(212,175,55,0.5);
+}
+
+/* ICON STYLE */
+.icon{
+  font-size:18px;
+  margin-right:10px;
+}
+
+/* BUTTON CONTENT */
+.btn span{
+  flex:1;
+  text-align:left;
 }
 
 /* MENU */
@@ -118,59 +135,80 @@ p{
 
 <!-- HOME -->
 <div id="home" class="screen active">
+
 <img src="logo.png" class="logo">
 
-<h2>ENERGY RESET METHOD</h2>
+<h2>ENERGY RESET</h2>
+<p>METHOD</p>
 
-<button class="btn main" onclick="nav('personalni')">Personalni rad</button>
-<button class="btn secondary" onclick="nav('poslovni')">Poslovni rad</button>
-<button class="btn secondary" onclick="nav('edicija')">Edicija</button>
-<button class="btn secondary" onclick="nav('kontakt')">Kontakt</button>
+<button class="btn main" onclick="nav('personalni')">
+  <div class="icon">👤</div>
+  <span>Personalni rad</span>
+  ›
+</button>
+
+<button class="btn secondary" onclick="nav('poslovni')">
+  <div class="icon">💼</div>
+  <span>Poslovni rad</span>
+  ›
+</button>
+
+<button class="btn secondary" onclick="nav('edicija')">
+  <div class="icon">📖</div>
+  <span>Edicija</span>
+  ›
+</button>
+
+<button class="btn secondary" onclick="nav('kontakt')">
+  <div class="icon">✉️</div>
+  <span>Kontakt</span>
+  ›
+</button>
+
 </div>
 
 <!-- PERSONALNI -->
 <div id="personalni" class="screen">
+
 <img src="logo.png" class="logo">
 
-<h2>Unutrašnja stabilizacija</h2>
-
-<p>
-Ako osećaš pritisak, nemir ili blokadu — vraća se fokus i stabilnost.
-</p>
+<h2>Stabilnost</h2>
+<p>Povratak fokusa i unutrašnjeg mira.</p>
 
 <button class="btn main" onclick="window.open('https://wa.me/38163459383','_blank')">
 Zakaži termin
 </button>
 
-<button class="btn secondary" onclick="window.open('https://energyreset.link','_blank')">
+<button class="btn secondary" onclick="window.open('https://nakshon-8.github.io/Energy-Reset-Method/','_blank')">
 Saznaj više
 </button>
+
 </div>
 
 <!-- POSLOVNI -->
 <div id="poslovni" class="screen">
+
 <img src="logo.png" class="logo">
 
-<h2>Struktura i odluke</h2>
-
-<p>
-Rad sa sistemima, pravcem i stabilnim odlukama.
-</p>
+<h2>Jasnoća</h2>
+<p>Odluke i stabilan pravac.</p>
 
 <button class="btn main" onclick="window.open('https://wa.me/38163459383','_blank')">
 Kontakt
 </button>
 
-<button class="btn secondary" onclick="window.open('https://energyreset.link','_blank')">
+<button class="btn secondary" onclick="window.open('https://nakshon-8.github.io/Energy-Reset-Method/','_blank')">
 Saznaj više
 </button>
+
 </div>
 
 <!-- EDICIJA -->
 <div id="edicija" class="screen">
+
 <img src="logo.png" class="logo">
 
-<h2>Knjige i materijali</h2>
+<h2>Znanje</h2>
 
 <button class="btn main" onclick="window.open('https://payhip.com/b/DYJib','_blank')">
 Besplatna knjiga
@@ -179,10 +217,12 @@ Besplatna knjiga
 <button class="btn secondary" onclick="window.open('https://payhip.com/Serpentas','_blank')">
 Sve knjige
 </button>
+
 </div>
 
 <!-- KONTAKT -->
 <div id="kontakt" class="screen">
+
 <img src="logo.png" class="logo">
 
 <h2>Kontakt</h2>
@@ -194,6 +234,7 @@ WhatsApp
 <button class="btn secondary" onclick="window.open('mailto:serpentas9@gmail.com','_blank')">
 Email
 </button>
+
 </div>
 
 <!-- MENU -->
@@ -212,7 +253,7 @@ function nav(id){
 
   document.querySelectorAll('.menu div').forEach(m=>m.classList.remove('active'));
 
-  document.getElementById('m-home').classList.add('active');
+  if(id==='home') document.getElementById('m-home').classList.add('active');
   if(id==='personalni') document.getElementById('m-p').classList.add('active');
   if(id==='poslovni') document.getElementById('m-b').classList.add('active');
   if(id==='edicija') document.getElementById('m-e').classList.add('active');
