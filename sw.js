@@ -1,4 +1,4 @@
-const CACHE = 'erm-v5';
+const CACHE = 'erm-v6';
 
 const FILES = [
   'app.html',
