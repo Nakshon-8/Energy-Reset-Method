@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sadržaji – Energy Reset Method</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,400&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #050400; color: #fff; font-family: -apple-system, Arial, sans-serif; min-height: 100vh; }
+
+.header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 16px;
+  background: rgba(5,4,0,0.97);
+  border-bottom: 1px solid rgba(212,175,55,0.2);
+  position: sticky; top: 0; z-index: 100;
+}
+
+.header-center {
+  display: flex; align-items: center; gap: 8px;
+}
+
+.header-logo-img {
+  width: 36px; height: 36px;
+  filter: drop-shadow(0 0 6px rgba(212,175,55,0.7));
+}
+
+.header-logo-text {
+  font-family: 'Cinzel', serif;
+  color: #D4AF37;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  line-height: 1.4;
+}
+
+.back-btn {
+  display: flex; align-items: center; gap: 5px;
+  background: none;
+  border: 1px solid rgba(212,175,55,0.4);
+  color: #D4AF37;
+  padding: 6px 12px;
+  border-radius: 50px;
+  font-family: 'Playfair Display', serif;
+  font-size: 12px; font-style: italic;
+  cursor: pointer; text-decoration: none;
+}
+
+.main { max-width: 1000px; margin: 0 auto; padding: 0 12px 50px; }
+
+.section-title {
+  font-family: 'Cinzel', serif;
+  color: #D4AF37; font-size: 13px; letter-spacing: 3px;
+  text-align: center; margin: 30px 0 14px;
+  display: flex; align-items: center; gap: 10px;
+}
+
+.section-title::before, .section-title::after {
+  content: ''; flex: 1; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212,175,55,0.4), transparent);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.card {
+  background: rgba(212,175,55,0.04);
+  border: 1px solid rgba(212,175,55,0.18);
+  border-radius: 10px; overflow: hidden;
+  cursor: pointer; transition: border-color 0.2s, transform 0.2s;
+  text-decoration: none; display: block;
+}
+
+.card:hover { border-color: rgba(212,175,55,0.5); transform: translateY(-2px); }
+
+.card-thumb-placeholder {
+  width: 100%; height: 110px;
+  background: linear-gradient(135deg, #1a1200, #0a0800);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 32px;
+}
+
+.card-body { padding: 10px 12px 12px; }
+
+.card-tag {
+  font-size: 9px; letter-spacing: 2px; color: #D4AF37;
+  font-family: 'Cinzel', serif; margin-bottom: 4px; opacity: 0.8;
+}
+
+.card-title {
+  font-family: 'Playfair Display', serif;
+  color: #fff; font-size: 13px; font-style: italic;
+  line-height: 1.4; margin-bottom: 5px;
+}
+
+.card-desc {
+  font-family: 'Playfair Display', serif;
+  color: #777; font-size: 11px; font-style: italic; line-height: 1.5;
+}
+
+.card-arrow {
+  display: flex; align-items: center; justify-content: flex-end;
+  margin-top: 8px; color: #D4AF37; font-size: 16px; opacity: 0.6;
+}
+
+.card-placeholder {
+  background: rgba(212,175,55,0.02);
+  border: 1px dashed rgba(212,175,55,0.12);
+  border-radius: 10px; height: 170px;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 6px;
+  color: rgba(212,175,55,0.25);
+  font-family: 'Playfair Display', serif;
+  font-style: italic; font-size: 12px;
+}
+
+.footer {
+  text-align: center; padding: 20px;
+  color: #D4AF37; font-size: 9px; letter-spacing: 2px;
+  opacity: 0.4; border-top: 1px solid rgba(212,175,55,0.1);
+  font-family: 'Cinzel', serif;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <a class="back-btn" href="index.html">← Nazad</a>
+  <div class="header-center">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAABCGlDQ1BJQ0MgUHJvZmlsZQAAeJxjYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiBEAwSk4sLGHADoKpv1yBqL+viUYcLcKakFicD6Q9ArFIEtBxopAiQLZIOYWuA2EkQtg2IXV5SUAJkB4DYRSFBzkB2CpCtkY7ETkJiJxcUgdT3ANk2uTmlyQh3M/Ck5oUGA2kOIJZhKGYIYnBncAL5H6IkfxEDg8VXBgbmCQixpJkMDNtbGRgkbiHEVBYwMPC3MDBsO48QQ4RJQWJRIliIBYiZ0tIYGD4tZ2DgjWRgEL7AwMAVDQsIHG5TALvNnSEfCNMZchhSgSKeDHkMyQx6QJYRgwGDIYMZAKbWPz9HbOBQAAAN70lEQVR42n2ZaYye1XmGr7O827fMN/t4vOLxgvGOWWyzG7MESoggOECQQvMnShQ1+RNFqKKNUdpUCQ3NokZK1aqVUFogiVIiTBAhBVQEFhDADsZbAWOPlxnP/q3vcs7pj3fGMzbjnD8z8868Z+7znOe5n+e+PwE45lm+p/G0QimJEAIBIAQAzjmcY85z5l8u/13+69l3Z/7eWouxljQ1JGk27xbiQoCB7xH4+tyLxlisc/nGc5aUIgdsHda5+TcXAiHAOT71vhACKQRKSTytkFKSJCnxBUDPA1iIAqQUNJox1s7/T6UQeFpgUosFPAlSC5JsLgiB1gKXWdLpR54SGMtFDyOFIAp9nHM0WglCCJxzswALoY8Dmq1k3kjkXx2RFhSEY8cNS1m+vI13/niCd96fxChJI3HgwPdAJI41KyK2X9XN4GCNl/ZOkDhIzPwRnVlh4COAZpzjUMBuz9NorWg044tfFY7Qk5Sk4wc/uJ8Hvngzvp/wl19YTCRi9h2YQHsKTwtUZrnvno08/sP7CBjh9qs029cVePmtKtZBZmcPfeHKjMH39XSOOiRA4Ol5weU5lAdZKUmWWu68bSlbNhT5za9fRYTw9K8Ps+uuXtYuU9jY4FJDf4/PN/9qG8/9dj9OZjz/yjhLehz33Vggyxxagpu/NmH6FoNpkEprtVsKQZoZLjzUDDgBed4ZxwN39jA5fIaNm7oZOtNg06o2JsZSOtojwtBnSY/HFZva6Wx3FP0646MJW9b4HDhap7MkefHtJlpLjHVzAvDpolBS5QADz9ttpsv905EDQf69EoJAOVSW8fDnF/GH18dYOHApqrAKigvoWdTN5s2drB8wdKgmfrGIyzKyyVGOji/i1ts38p+/OsLHpxMMYk4RinmvW0iBpxRSSnEeuPNP45CSaapw+IHk9X1T/Nszp7j5ltWEUYUUQZo1MPE4tjZEMjVOq2WwWYrLDGmzyTXbF/CrPVX+8OYUvi9x1iGlyPPrIldtrc05uK0YutocWpk9jUNO85gUIAGlJJWCpNnIqLSHrFvdzbYBjXMJB07EHD2TkCUtLltW4qF7lpDFlqf2HOf1fVVqVUuhpJioO4xxWMC6GdrJL3ZuYUspKEUhOmf383NOSYGUEgEIl0fQU+BLQ3PSEHgwONRE2JN86eYejE15+b0p3jmYk6xyNcYGz2Ccx74jDQbHLCUFI+OGKMh5M83yfZWUIBzGgJ25t+lO5ZzLI1htxPkPQuDPIVgNFEKJEwLPWW7a2s89u+4kTavUq6fIRj9hxUCFVtzko8MTuKBAobObom9ZWGyStWKODafUM02hGCCjkGefO84b+ydBCqQUxC1D4nLCF1Kc40khoFQIkOdSVUCowbOWq9e388jX1nHvrf34WAqBRBjH+stXsXHrZmITsWR5H70dEqE8kB5RIFjYF7B0aQdtXWXGbcSE0XR2KFYs1hgH12wqsPHSAknqiHyBZwx33djJIw/1cO3aAp5weGomL3NkKvT17iQ1KClR1vHAXQv5h8euw+oid9+xlDXLQt7YexqFYMOmRdisTv+SxdTjBvWhY5Q6KlgHtbEaolDCBt24zKBdirIpjVaGkpbuNvj4RMKZsw32H24QSst3dt/Hg3f3kU6d5sEdIWkK73+UgBQ4J/A9jXZzKravQ/GVBxex5/mjLLlsAXv2HOPWG3pZu6rI796uUa3X6KhYWo0x7n/4SbZt6uO7jw6QDR3i+X3wu9cOAgdZt0hx91UepaLPU69W+dOg4xd/u5iiZ5mcSqhmjuuu6mD7FWVeeOEEA70lnt97li/s8Pn9W5KTk/ZcLqrA17vTzCCcY8Uinxu2lGkkkhVLI/o7FK2mpbu7QOBS1q8MqFQ8TJYQxqPs/t632bv3NOs3dPDMLw9gU0vkK6LI46+/uoSPRyRff3gAv1hm4yUeyhokAmktW9eXCdwYXRVLScbgMoIw5O0P6pwezyvb91UOMEkNvhZUpzI+e3MP0vMYHBboYi+JKNLeGbKiu0pRWUQYoG1MRdc4MTzFdTvW8D8vfcwLLx7CjzyUdIyOJZSKIXfc1M1r7xuuvnoRSeYRZxnlyLCwnCCdprO3iLYJBw5M0L/xWopRyL8+8wlGSozNZ1I5wzvGghOCb3//QzytWLykgCBBujoinSJtxKStFJI6LouJ63VWr5E89eTL/NNPfk9Y0tRbhkbsqJQ1P3v6FP/x7FnWry5Aq4bIqogsxqYZcdOSphabxhjj6KoIiqLGd544QIbAzHSZuTQDjoIv8ISj3oKVSyPu3epjreC9YylvHW2wa2cXO7d1kukij3z/T0xOZqQJdHRoai1HanL+8pSgFMDZCYPSsKA35IFrNFlqOXQy5bWDKTuvbOf+28oYofnuz09y9JOEQgixFTTT/IqLkZ8T9cxqpSA8SSGCZmy4Ynsfzkj+b2yYkak61lhc0sRaRTOGMNSEkaDatBg72wlS66jFgs52jbOORiNj8+X94GDcTjD29gTWOWya4hTUWg4vkMQW4uz8mUDP7YTOOSyCpGkpRRa8AkJJnMjPUR1vMHI6QYZNGrUMKUAHCuPytjVXizggSR1ZbIgKCis9PKVwQgGOqYkWY8Mp0vOoV1OaMWhPcOEce65IAEJPII1j/eoyd1zbwUC/JM2gOVmnt8Nj++ZOerrKlNra6FnSy+IFPicHp3Aub1PWgpSglcCXlrK2fPaWBWwc0KxYFJBZSVxvUY4011/RRX9vhWJbGz39ZVr1lNMjCUIKnM07h+/pWYBa5eA+d0s/P/7hXbjJUwSiRWo9WpN11l3iWLikgiiUoVBh2SXdbNvWzz07O3njzbPUmxap8vYVSMeiroCf/eR2tmyKSEdG6GiPSKzANZusXOAYWNmOC0sQlVm6MOBLOwOGhlocPJEgpcAxU8XTMRVAd5via7sqvPjcH6m3HCZuYrMELTKklCjto3SA1AWCCI4dHGTwxDjf+8YCQgWRLwg9gYfj7x69krHRlKOnFtDbX8bZDGsMWliCQogKSnha47mE6ugUe14d5su3CbrLcm7O5UUiBJjM0delGD01gko1q1a2MTjoU6xI3j0h2fP0KDvWN9iwROGHmieerfPYV3qxcYP27oyNy+HNwxkCWL+uQltJMHiyQlulwjf/5gRPfGsZvna8e9zwy5eH2LGhyrZVisw4tlzeTq0kmawL+tthuJoPLg6QiDwxPS346FSKSwxZM+PosRqjdilrtv0F7x9pMNmAzu6ATZvKXL2tl0ULQv771Rr97QGj1QJrV3WwdXOFreuKrB2IGJtIWNYzzi/+/Rl6eyO62vX01CeZbDgODSZcf0WALAQMnnVEfQN093VzYtjiKTFbxefUlHPEGTz2ZJXHvlzBeJqFlxb58Y9e4ZPTLXwBYegzEUecORHz+LeWYFQbTrdTVpq+DQ1uyaZonD3D+HCCbdaoN5rcdJlm5V0lPjoZU4gCwkChgeNDGU88U+Pru7qZTH16+z0e/cdx6tn5M/YsQAtaCg6fzPji34+yZtkUZ84eZ2wKymVFo2potSw7t5Z486jCygIIj7RZJU1bSBtD0qQ63qReN5RqVRAewqa0kpCeRX1svbKT/31vPxaIAslv9zbZe/Aky/o0R459SCPL8y3L3Kwmmh1Yc2HuKYGWOYf5nsBTksw4PAkdZUV3pyYMNEb6dBYFVy51CCwHT2UcO5uSpSnLF4R8/sYCyJCnXzzL4JilUAhppYKhoSYjUynGCbTKtW+cOnwvV3r5wOoQAsrFCD1rReTtJTWOzOSaIDWQGZuLJgTDExknR1OchRRY2KG5//pOjHG8uD9m7we5G9Co1dm6LMW6OvuOtvhoFDySXDrofC9jHZmdNpekoJVZnBPnSTZrLaIUBa4RJ1jrLpB/uR6elZ/ga0GkHN0dRR7ctZJuMczCvojUWA4dmsQg6OyrUKq00V2SmDRmtJpyZqjOfz0/wumxlNRAahzGcZ5QcoBz4pyClFJQCH2kdQ4x1xo7T3TOGb+n1V05Uvz8p5/j6m0biTyDTTOMdQTKsqDTsXRhQGdXkcQLSbVHqShYv1zzo2900VUSSDFjv00Lo9lQIMSsiyYQWOdQUordDvcpNyuPXA5SCNBKkiWWh+7s5JK2cY5+eJKChkBlGGB0JCbODE4FgMLPYlQyRWOiyvHBKj4JBQ1vHsnItfhMtYq5vDxbvdO+pM6MxVOKDHsRpyQfvXEOAxRli+MfD9NZUuiehYyOZixbHPEvvxnnlfdqQJXVvZKvfibkw1Mx27f1sGpZyMh4RnvZYKb7NReamhcsJSVpZpDGWIT8tP0w9yU3PdD6Gva80WTDcp9Tox4TY00qi9dSWXw97x+uUwoVlUgy1RKsWBqyZWMn1VgwxBp23ruLV95N8b2Z6ImLmkdC5EVqjM3tt9zTU2TGXtR+czi0EkzULEeOGz6zrUC57GPSFo/sfomhyQRjIXPgrGPvBwlbL/Po7fLp7Svy+D9/wBv7z2KlJDHuvAheuKLAIzU2L9wZARr4Hs65eb3iudGNvLxvOwftJcFI1RFqcFKQTD/3tUAJaCWOnoqgUXdYB9IX1FruXPTmu9rA1wghaMXppy3gwPcQQJymFwyO0zbcNFBPgZb5tSslyEw+7s/a5Xm0PZUPskoJrIFW+uf97BlPcAbcvCa6pxVa5ax+MQP93OWIOUV0gaeYP2eaOrgoKCkFSuZmepZZ0sz8eZd/bplLKRHi/ExxF3zEcLGPDebb+JzjOE3GbpparLUXzf//B2P+5fwHpYHAAAAAAElFTkSuQmCC" class="header-logo-img" alt="Logo">
+    <div class="header-logo-text">ENERGY RESET<br>METHOD</div>
+  </div>
+  <div style="width:80px;"></div>
+</div>
+
+<div class="main">
+
+  <div class="section-title">PODKASTI</div>
+  <div class="grid">
+    <a class="card" href="https://youtu.be/ysSmzujmBcU" target="_blank">
+      <div class="card-thumb-placeholder">🎙️</div>
+      <div class="card-body">
+        <div class="card-tag">PODKAST</div>
+        <div class="card-title">Energija i Svest</div>
+        <div class="card-desc">Razgovor o energetskim principima i transformaciji.</div>
+        <div class="card-arrow">›</div>
+      </div>
+    </a>
+    <a class="card" href="https://youtu.be/ysSmzujmBcU" target="_blank">
+      <div class="card-thumb-placeholder">🎙️</div>
+      <div class="card-body">
+        <div class="card-tag">PODKAST</div>
+        <div class="card-title">Unutrašnji Poredak</div>
+        <div class="card-desc">Povratak prirodnom toku energije.</div>
+        <div class="card-arrow">›</div>
+      </div>
+    </a>
+    <div class="card-placeholder">
+      <span style="font-size:24px;">+</span>
+      <span>Uskoro</span>
+    </div>
+  </div>
+
+  <div class="section-title">INTERVJUI</div>
+  <div class="grid">
+    <a class="card" href="https://www.originalmagazin.com/intervju/dragan-malicevic-vera-je-hodanje-po-vodi/" target="_blank">
+      <div class="card-thumb-placeholder">📰</div>
+      <div class="card-body">
+        <div class="card-tag">INTERVJU</div>
+        <div class="card-title">Original Magazin</div>
+        <div class="card-desc">Vera je hodanje po vodi.</div>
+        <div class="card-arrow">›</div>
+      </div>
+    </a>
+    <a class="card" href="topzdravlje.pdf" target="_blank">
+      <div class="card-thumb-placeholder">📄</div>
+      <div class="card-body">
+        <div class="card-tag">INTERVJU</div>
+        <div class="card-title">Top Zdravlje</div>
+        <div class="card-desc">Metoda u praksi.</div>
+        <div class="card-arrow">›</div>
+      </div>
+    </a>
+    <a class="card" href="https://youtu.be/ysSmzujmBcU" target="_blank">
+      <div class="card-thumb-placeholder">🎬</div>
+      <div class="card-body">
+        <div class="card-tag">INTERVJU</div>
+        <div class="card-title">Put Transformacije</div>
+        <div class="card-desc">Video intervju o transformaciji iznutra.</div>
+        <div class="card-arrow">›</div>
+      </div>
+    </a>
+    <div class="card-placeholder">
+      <span style="font-size:24px;">+</span>
+      <span>Uskoro</span>
+    </div>
+  </div>
+
+  <div class="section-title">ČLANCI</div>
+  <div class="grid">
+    <div class="card-placeholder">
+      <span style="font-size:24px;">+</span>
+      <span>Uskoro</span>
+    </div>
+    <div class="card-placeholder">
+      <span style="font-size:24px;">+</span>
+      <span>Uskoro</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">ENERGY RESET METHOD © 2026</div>
+
+</body>
+</html>
