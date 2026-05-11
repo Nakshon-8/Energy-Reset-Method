@@ -79,11 +79,16 @@ function startApp() {
     var email = document.getElementById('email-input').value.trim();
     var pass = document.getElementById('pass-input').value;
     var err = document.getElementById('login-err');
-    err.textContent = '';
+    err.textContent = 'Učitavam...';
+    if (!email || !pass) { err.textContent = 'Unesite email i lozinku.'; return; }
     var fn = isRegister
       ? auth.createUserWithEmailAndPassword(email, pass)
       : auth.signInWithEmailAndPassword(email, pass);
-    fn.catch(function(e) { err.textContent = prevediGresku(e.code); });
+    fn.then(function() {
+      err.textContent = '';
+    }).catch(function(e) {
+      err.textContent = e.code + ': ' + e.message;
+    });
   };
 
   window.doGoogle = function() {
